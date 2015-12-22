@@ -34,9 +34,8 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
     imageArray.append(UIImage(named: "IMG_0500.PNG")!)
     imageArray.append(UIImage(named: "IMG_0501.PNG")!)
     imageArray.append(UIImage(named: "IMG_0502.PNG")!)
-    imageArray.append(UIImage(named: "IMG_0501.PNG")!)
     
-    for var i = 0; i <= 2; i++ {
+    for i in 0...2 {
       let imageView = UIImageView(image: imageArray[i])
       imageView.frame = CGRect(x: CGFloat(i+initIndex) * ScreenWidth, y: 0, width: ScreenWidth, height: ScreenHeight)
       imageView.contentMode = .ScaleAspectFill
@@ -53,7 +52,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
     let index = Int(scrollView.contentOffset.x/ScreenWidth)
     if index != nowIndex {
       nowIndex = index
-      for var i = 0; i <= 2; i++ {
+      for i in 0...2 {
         let imageView = imageViewArray[i]
         imageView.frame = CGRect(x: CGFloat(nowIndex-1+i) * ScreenWidth, y: imageView.frame.origin.y, width: imageView.frame.size.width, height: imageView.frame.size.height)
         if nowIndex > 500 {
