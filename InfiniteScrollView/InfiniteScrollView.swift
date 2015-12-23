@@ -18,6 +18,8 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
   var nowIndex = 0
   let initIndex = 500
   
+  weak var pageControl:WBPageControl?
+  
   override init(frame: CGRect) {
     let frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight)
     super.init(frame: frame)
@@ -44,22 +46,25 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
       imageViewArray.append(imageView)
     }
     
-    self.setContentOffset(CGPoint(x: ScreenWidth * CGFloat(initIndex+1), y: 0), animated: false)
+    self.setContentOffset(CGPoint(x: ScreenWidth * CGFloat(initIndex), y: 0), animated: false)
     nowIndex = 1
   }
   
   func scrollViewDidScroll(scrollView: UIScrollView) {
+    let moveIndex = CGFloat(Int(scrollView.contentOffset.x/ScreenWidth)-initIndex)+(scrollView.contentOffset.x%ScreenWidth/ScreenWidth)
+    self.pageControl?.moveIndex = moveIndex
+    
     let index = Int(scrollView.contentOffset.x/ScreenWidth)
     if index != nowIndex {
       nowIndex = index
       for i in 0...2 {
         let imageView = imageViewArray[i]
         imageView.frame = CGRect(x: CGFloat(nowIndex-1+i) * ScreenWidth, y: imageView.frame.origin.y, width: imageView.frame.size.width, height: imageView.frame.size.height)
-        if nowIndex > 500 {
-          imageView.image = imageArray[(abs(nowIndex-initIndex)-1+i)%imageArray.count]
+        if nowIndex > initIndex {
+          imageView.image = imageArray[((nowIndex-initIndex)-1+i)%imageArray.count]
         }
         else {
-          imageView.image = imageArray[((imageArray.count-abs(nowIndex-initIndex)%imageArray.count)-1+i)%imageArray.count]
+          imageView.image = imageArray[((imageArray.count-(initIndex-nowIndex)%imageArray.count)-1+i)%imageArray.count]
         }
       }
     }

@@ -17,6 +17,7 @@
 		AA810C391C29015800429B94 /* IMG_0500.PNG in Resources */ = {isa = PBXBuildFile; fileRef = AA810C351C29015800429B94 /* IMG_0500.PNG */; };
 		AA810C3A1C29015800429B94 /* IMG_0501.PNG in Resources */ = {isa = PBXBuildFile; fileRef = AA810C361C29015800429B94 /* IMG_0501.PNG */; };
 		AA810C3B1C29015800429B94 /* IMG_0502.PNG in Resources */ = {isa = PBXBuildFile; fileRef = AA810C371C29015800429B94 /* IMG_0502.PNG */; };
+		AA810C3E1C29484600429B94 /* WBPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA810C3D1C29484600429B94 /* WBPageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AA810C351C29015800429B94 /* IMG_0500.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0500.PNG; sourceTree = "<group>"; };
 		AA810C361C29015800429B94 /* IMG_0501.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0501.PNG; sourceTree = "<group>"; };
 		AA810C371C29015800429B94 /* IMG_0502.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0502.PNG; sourceTree = "<group>"; };
+		AA810C3D1C29484600429B94 /* WBPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBPageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		AA810C1E1C28FE8800429B94 /* InfiniteScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				AA810C3C1C29481800429B94 /* PageControl */,
 				AA810C331C29014100429B94 /* image */,
 				AA810C1F1C28FE8800429B94 /* AppDelegate.swift */,
 				AA810C211C28FE8800429B94 /* ViewController.swift */,
@@ -85,6 +88,14 @@
 				AA810C371C29015800429B94 /* IMG_0502.PNG */,
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		AA810C3C1C29481800429B94 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				AA810C3D1C29484600429B94 /* WBPageControl.swift */,
+			);
+			path = PageControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA810C321C28FEEA00429B94 /* InfiniteScrollView.swift in Sources */,
+				AA810C3E1C29484600429B94 /* WBPageControl.swift in Sources */,
 				AA810C221C28FE8800429B94 /* ViewController.swift in Sources */,
 				AA810C201C28FE8800429B94 /* AppDelegate.swift in Sources */,
 			);
@@ -314,6 +326,7 @@
 				AA810C301C28FE8800429B94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
